@@ -173,27 +173,27 @@ export const apps: AppEntry[] = [
       { label: 'GitHub', href: 'https://github.com/mozilla-platform-ops/BuildWatch' },
     ],
     privacy: {
-      updated: 'May 2026',
+      updated: 'May 8, 2026',
       html: `
 <p>BuildWatch is a thin client over Mozilla's public CI APIs. It does not run a backend, does not collect telemetry, and does not transmit data anywhere except to the Mozilla services it queries on your behalf.</p>
 
 <h3>Information Stored On Your Device</h3>
 <ul>
   <li>Your Mozilla / LDAP email address (optional — used only to filter the "My Pushes" tab)</li>
-  <li>Your Bugzilla API key (optional — used only when you file a bug from a failure)</li>
   <li>Your app preferences (default repository, tier visibility, notification opt-in)</li>
+  <li>The set of pushes you've marked as watched</li>
 </ul>
-<p>All of the above is stored locally on your device using standard iOS preferences and Keychain APIs. None of it is transmitted to any server operated by the developer.</p>
+<p>All of the above is stored locally on your device using <code>UserDefaults</code>. None of it is transmitted to any server operated by the developer, because the developer does not operate any servers.</p>
 
 <h3>Network Requests</h3>
 <p>BuildWatch communicates only with public Mozilla services:</p>
 <ul>
-  <li><a href="https://treeherder.mozilla.org" target="_blank" rel="noopener noreferrer">TreeHerder</a> — push list, job results, retrigger actions, log lines</li>
+  <li><a href="https://treeherder.mozilla.org" target="_blank" rel="noopener noreferrer">TreeHerder</a> — push list, job results, retrigger actions, text log errors</li>
   <li><a href="https://treestatus.prod.lando.prod.cloudops.mozgcp.net" target="_blank" rel="noopener noreferrer">TreeStatus</a> — open/closed/restricted state of Mozilla trees</li>
-  <li><a href="https://firefox-ci-tc.services.mozilla.com" target="_blank" rel="noopener noreferrer">Taskcluster</a> — task deep links</li>
-  <li><a href="https://bugzilla.mozilla.org" target="_blank" rel="noopener noreferrer">Bugzilla</a> — bug links from commit messages, filing new bugs (only when you initiate)</li>
+  <li><a href="https://firefox-ci-tc.services.mozilla.com" target="_blank" rel="noopener noreferrer">Taskcluster</a> — deep links to individual tasks</li>
+  <li><a href="https://bugzilla.mozilla.org" target="_blank" rel="noopener noreferrer">Bugzilla</a> — opening bug links found in commit messages</li>
 </ul>
-<p>These services have their own privacy and data-handling policies, governed by Mozilla.</p>
+<p>These services have their own privacy and data-handling policies, governed by Mozilla. See <a href="https://www.mozilla.org/privacy/" target="_blank" rel="noopener noreferrer">mozilla.org/privacy</a>.</p>
 
 <h3>What BuildWatch Does Not Do</h3>
 <ul>
@@ -203,8 +203,11 @@ export const apps: AppEntry[] = [
   <li>No data sold or shared with third parties</li>
 </ul>
 
+<h3>Children's Privacy</h3>
+<p>BuildWatch is a developer tool for adult engineers working on Firefox. It is not directed at children under 13 and does not knowingly collect data from anyone, regardless of age — see "Information Stored On Your Device" above.</p>
+
 <h3>Source Code</h3>
-<p>BuildWatch is open source under the MPL-2.0 license. Source: <a href="https://github.com/mozilla-platform-ops/BuildWatch" target="_blank" rel="noopener noreferrer">github.com/mozilla-platform-ops/BuildWatch</a>.</p>
+<p>BuildWatch is open source under the MPL-2.0 license. Source: <a href="https://github.com/mozilla-platform-ops/BuildWatch" target="_blank" rel="noopener noreferrer">github.com/mozilla-platform-ops/BuildWatch</a>. You are encouraged to read it and verify these claims.</p>
 
 <h3>Contact</h3>
 <p>Questions or issues: <a href="mailto:ryanpcurran@icloud.com">contact me</a>.</p>
