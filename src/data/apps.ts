@@ -2,6 +2,7 @@ export interface AppEntry {
   slug: string;
   name: string;
   tagline: string;
+  platform: string;
   description: string;
   icon: string;
   status?: string;
@@ -12,8 +13,9 @@ export interface AppEntry {
 export const apps: AppEntry[] = [
   {
     slug: 'timefold',
-    name: 'Timefold - iOS',
+    name: 'Timefold',
     tagline: 'On This Day',
+    platform: 'iOS',
     description:
       'Privacy-first iOS app that surfaces photos taken on this date in past years from your Apple Photos library. No accounts. No analytics. Everything runs on-device.',
     icon: '/timefold-icon.png',
@@ -68,8 +70,9 @@ export const apps: AppEntry[] = [
   },
   {
     slug: 'timefold-android',
-    name: 'Timefold - Android',
+    name: 'Timefold',
     tagline: 'On This Day',
+    platform: 'Android',
     description:
       "Android port of Timefold built with Kotlin + Jetpack Compose. Same privacy promise, same on-device-only design — surfaces photos and videos taken on this date in past years from your device's MediaStore. Includes a Glance home-screen widget and optional local daily reminders.",
     icon: '/timefold-android-icon.png',
@@ -122,6 +125,7 @@ export const apps: AppEntry[] = [
     slug: 'crumb',
     name: 'Crumb',
     tagline: "Don't give a crumb",
+    platform: 'Firefox',
     description:
       'Firefox extension that blocks cookie-consent banners. Declarative-only, zero telemetry, ~25 lines of runtime. MIT-licensed and reproducible from source.',
     icon: '/crumb-icon.png',
@@ -166,6 +170,7 @@ export const apps: AppEntry[] = [
     slug: 'buildwatch',
     name: 'BuildWatch',
     tagline: 'Firefox CI on your phone',
+    platform: 'iOS',
     description:
       'Native iOS app for Mozilla engineers — sheriffs, on-call, and devs — to monitor Firefox CI build status without opening a laptop. Live push lists, per-platform results, retrigger actions, and grouped failure summaries pulled from TreeHerder, TreeStatus, Taskcluster, and Bugzilla.',
     icon: '/buildwatch-icon.png',
@@ -218,6 +223,7 @@ export const apps: AppEntry[] = [
     slug: 'moodring',
     name: 'MoodRing',
     tagline: 'Play What You Feel',
+    platform: 'iOS',
     description:
       'iOS app that turns a sentence about how you feel into an Apple Music playlist. Powered by Claude via a Cloudflare Worker proxy. No accounts, no tracking.',
     icon: '/moodring-icon.png',
