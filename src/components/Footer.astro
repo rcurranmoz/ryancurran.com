@@ -1,0 +1,29 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-rule mt-auto">
+  <div class="max-w-4xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-sm">
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <a href="https://github.com/rcurranmoz" target="_blank" rel="noopener noreferrer" class="nav-link">
+        github
+      </a>
+      <a href="https://www.linkedin.com/in/ryancurran" target="_blank" rel="noopener noreferrer" class="nav-link">
+        linkedin
+      </a>
+      <a href="mailto:ryanpcurran@icloud.com" class="nav-link">
+        email
+      </a>
+    </div>
+
+    <p class="text-dim text-xs">
+      © {year} ryan curran · built with astro · hosted on netlify
+      <span class="ml-2">·</span>
+      <span class="ml-2">palette: <span id="palette-id" class="text-accent">…</span></span>
+    </p>
+  </div>
+</footer>
+
+<script is:inline>
+  document.getElementById('palette-id').textContent = document.documentElement.dataset.palette || '?';
+</script>

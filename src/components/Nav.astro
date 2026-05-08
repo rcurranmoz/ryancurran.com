@@ -1,0 +1,26 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) =>
+  path === '/' ? currentPath === '/' : currentPath.startsWith(path);
+---
+
+<header class="w-full border-b border-rule bg-bg/95 backdrop-blur-sm sticky top-0 z-50">
+  <nav class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between text-sm">
+    <a href="/" class="nav-link text-accent crt-glow font-bold tracking-wide">
+      ryancurran.com
+    </a>
+
+    <ul class="flex items-center gap-6">
+      <li>
+        <a href="/" class:list={['nav-link', { 'text-accent': isActive('/') }]}>
+          ~/
+        </a>
+      </li>
+      <li>
+        <a href="/apps" class:list={['nav-link', { 'text-accent': isActive('/apps') }]}>
+          ~/apps
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

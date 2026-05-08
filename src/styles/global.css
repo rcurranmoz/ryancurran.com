@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Defaults — overridden at runtime by the inline palette-picker in Base.astro. */
+  :root {
+    --bg:       0 0 0;
+    --bg-soft:  10 10 10;
+    --fg:       237 237 237;
+    --accent:   255 103 0;
+    --dim:      107 107 107;
+    --rule:     26 26 26;
+  }
+
+  html {
+    @apply bg-bg text-fg font-mono;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 2px,
+        rgba(255, 255, 255, 0.018) 2px,
+        rgba(255, 255, 255, 0.018) 3px
+      );
+  }
+
+  ::selection {
+    @apply bg-accent text-bg;
+  }
+
+  a {
+    @apply text-accent underline-offset-4 hover:underline;
+  }
+
+  details > summary {
+    @apply cursor-pointer list-none;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-fg/80 hover:text-accent transition-colors no-underline;
+  }
+
+  .crt-glow {
+    text-shadow: 0 0 6px rgb(var(--accent) / 0.55);
+  }
+
+  .prompt::before {
+    content: '> ';
+    @apply text-accent;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0.6ch;
+    height: 1em;
+    background: rgb(var(--accent));
+    margin-left: 0.2ch;
+    vertical-align: -2px;
+    animation: blink 1s steps(1) infinite;
+    box-shadow: 0 0 8px rgb(var(--accent) / 0.7);
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .ascii-box {
+    @apply border border-rule bg-bg-soft p-6;
+  }
+
+  .app-card {
+    @apply border border-rule bg-bg-soft;
+  }
+
+  .privacy-prose {
+    @apply text-sm text-fg/80 leading-relaxed;
+  }
+  .privacy-prose h3 {
+    @apply text-fg font-bold uppercase tracking-wider text-xs mt-5 mb-2;
+  }
+  .privacy-prose p {
+    @apply mb-3;
+  }
+  .privacy-prose ul {
+    @apply list-disc pl-6 mb-3 space-y-1;
+  }
+  .privacy-prose a {
+    @apply break-words;
+  }
+}

@@ -1,0 +1,66 @@
+---
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/700.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'ryancurran.com',
+  description = 'Ryan Curran — Senior Software Engineer at Mozilla. Indie iOS apps and a few side projects.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://ryancurran.com');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title === 'ryancurran.com' ? title : `${title} — ryancurran.com`}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script is:inline>
+      // Random palette per page load — accent (and fg warmth) picked from a
+      // curated set. Runs before paint so there's no flash. The chosen id is
+      // stamped on <html data-palette="..."> for footer display + future hover.
+      (function () {
+        var palettes = {
+          orange: { accent: '255 103 0',  fg: '245 241 232' },
+          lime:   { accent: '198 255 0',  fg: '237 237 237' },
+          mint:   { accent: '74 222 128', fg: '237 237 237' },
+          violet: { accent: '167 139 250', fg: '237 237 237' },
+          sun:    { accent: '255 212 0',  fg: '245 241 232' },
+          mono:   { accent: '255 255 255', fg: '237 237 237' },
+        };
+        var ids = Object.keys(palettes);
+        var pick = ids[Math.floor(Math.random() * ids.length)];
+        var p = palettes[pick];
+        var root = document.documentElement;
+        root.style.setProperty('--accent', p.accent);
+        root.style.setProperty('--fg', p.fg);
+        root.dataset.palette = pick;
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

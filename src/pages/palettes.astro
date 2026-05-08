@@ -1,0 +1,159 @@
+---
+import Base from '../layouts/Base.astro';
+
+interface Palette {
+  id: string;
+  name: string;
+  blurb: string;
+  bg: string;        // page bg — always near-black for this round
+  bgSoft: string;    // card bg — slightly lifted
+  fg: string;        // body text
+  accent: string;    // single bold accent — the only chromatic moment
+  dim: string;       // muted gray for section labels, slugs, dates, badges
+  rule: string;      // hairline borders
+}
+
+// Single-accent, true-black palettes. Award-tier minimal terminal aesthetic.
+const palettes: Palette[] = [
+  {
+    id: 'orange',
+    name: 'Braun Orange',
+    blurb: 'True black + warm ivory + Dieter Rams Braun orange. The current direction, but on real black with discipline.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#f5f1e8',
+    accent: '#ff6700', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+  {
+    id: 'lime',
+    name: 'Acid Lime',
+    blurb: 'Brutalist. One radioactive lime against deep void. High-energy, attention-stealing.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#ededed',
+    accent: '#c6ff00', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+  {
+    id: 'mint',
+    name: 'Electric Mint',
+    blurb: 'A modern read on phosphor green — cleaner, more saturated, less vintage CRT, more 2026 terminal.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#ededed',
+    accent: '#4ade80', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+  {
+    id: 'violet',
+    name: 'Electric Violet',
+    blurb: 'Electric purple on void. Used by a lot of awarded dev tools (Plain, Replit, Vercel) — feels current.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#ededed',
+    accent: '#a78bfa', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+  {
+    id: 'sun',
+    name: 'Sun Yellow',
+    blurb: 'Pure school-bus yellow on black. Loud and confident. Reads like signage.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#f5f1e8',
+    accent: '#ffd400', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+  {
+    id: 'mono',
+    name: 'Monochrome',
+    blurb: 'No chromatic accent at all. Typography carries it. The boldest restraint move — works only if the type is doing real work.',
+    bg: '#000000', bgSoft: '#0a0a0a', fg: '#ededed',
+    accent: '#ffffff', dim: '#6b6b6b', rule: '#1a1a1a',
+  },
+];
+---
+
+<Base title="palettes" description="Palette comparison sandbox">
+  <main class="min-h-screen p-6 md:p-12" style="background: #050505; color: #ededed;">
+    <header class="max-w-6xl mx-auto mb-10">
+      <h1 class="text-2xl mb-2 font-mono">palettes — true black, single accent</h1>
+      <p class="font-mono text-sm" style="color: #888;">
+        All six on <code>#000</code>. Award-tier minimal terminal sites all share the same formula —
+        one bold accent, off-white text, hairline rules, generous space. Pick by id.
+      </p>
+    </header>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      {palettes.map((p) => (
+        <article
+          class="font-mono"
+          style={`background:${p.bg}; color:${p.fg}; border:1px solid ${p.rule};`}
+        >
+          <div class="px-6 py-4 border-b" style={`border-color:${p.rule};`}>
+            <p class="text-[10px] tracking-[0.25em] uppercase" style={`color:${p.dim};`}>{p.id}</p>
+            <h2 class="text-base font-bold" style={`color:${p.fg};`}>{p.name}</h2>
+            <p class="text-xs mt-2 leading-relaxed" style={`color:${p.dim};`}>{p.blurb}</p>
+          </div>
+
+          <div class="p-6">
+            <div class="border p-5" style={`border-color:${p.rule}; background:${p.bgSoft};`}>
+              <p class="text-[10px] tracking-[0.25em] uppercase mb-4" style={`color:${p.dim};`}>
+                ── ryancurran.com ─────────────────
+              </p>
+
+              <p class="mb-1 text-sm">
+                <span style={`color:${p.accent};`}>&gt; </span><span style={`color:${p.fg};`}>whoami</span>
+              </p>
+              <p class="mb-1 text-sm" style={`color:${p.fg};`}>ryan curran</p>
+              <p class="text-xs mb-5" style={`color:${p.dim};`}>senior software engineer @ mozilla</p>
+
+              <p class="mb-1 text-sm">
+                <span style={`color:${p.accent};`}>&gt; </span><span style={`color:${p.fg};`}>ls /</span>
+              </p>
+              <p class="mb-5 text-xs">
+                <a href="#" class="underline-offset-4 hover:underline" style={`color:${p.accent};`}>apps/</a>
+                <span class="ml-3" style={`color:${p.dim};`}>— timefold, crumb, buildwatch, moodring</span>
+              </p>
+
+              <div class="border-t pt-4" style={`border-color:${p.rule};`}>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-[10px] tracking-[0.25em] uppercase" style={`color:${p.dim};`}>TIMEFOLD-ANDROID(1)</span>
+                  <span
+                    class="text-[10px] uppercase tracking-[0.25em] px-2 py-0.5 border"
+                    style={`color:${p.dim}; border-color:${p.dim};`}
+                  >BETA</span>
+                </div>
+                <p class="text-sm mt-2" style={`color:${p.fg};`}>Timefold for Android</p>
+                <p class="text-xs mt-2">
+                  <a href="#" class="underline-offset-4 hover:underline" style={`color:${p.accent};`}>[ Play Store ]</a>
+                  <span class="mx-3" style={`color:${p.dim};`}>·</span>
+                  <a href="#" class="underline-offset-4 hover:underline" style={`color:${p.accent};`}>[ Join Beta ]</a>
+                  <span class="mx-3" style={`color:${p.dim};`}>·</span>
+                  <a href="#" class="underline-offset-4 hover:underline" style={`color:${p.accent};`}>[ GitHub ]</a>
+                </p>
+              </div>
+
+              <p class="mt-5 text-sm">
+                <span
+                  style={`display:inline-block; width:0.6ch; height:1em; background:${p.accent}; vertical-align:-2px;`}
+                ></span>
+              </p>
+            </div>
+
+            <div class="mt-5 grid grid-cols-5 gap-3 text-[10px]">
+              {[
+                ['bg', p.bg], ['bg-soft', p.bgSoft],
+                ['fg', p.fg], ['accent', p.accent], ['dim', p.dim],
+              ].map(([label, hex]) => (
+                <div>
+                  <div class="h-8 border" style={`background:${hex}; border-color:${p.rule};`}></div>
+                  <div class="mt-1 tracking-widest uppercase" style={`color:${p.dim};`}>{label}</div>
+                  <div class="font-mono" style={`color:${p.fg};`}>{hex}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-12 pt-8 border-t font-mono text-sm" style="border-color: #1a1a1a; color: #888;">
+      <p class="mb-3">
+        Pick by id (<span style="color: #ededed;">orange · lime · mint · violet · sun · mono</span>) — or describe a custom mix.
+      </p>
+      <p>
+        <span style="color: #ededed;">Heads up:</span> palette is one of three things to nail for award-tier.
+        Once it's locked, I'd want to also propose: typography refinements (better hierarchy in the same JetBrains Mono),
+        and one or two micro-interactions (custom cursor on links, subtle entry animations, hover state on app cards).
+        Those layer on top — palette first.
+      </p>
+    </div>
+  </main>
+</Base>
