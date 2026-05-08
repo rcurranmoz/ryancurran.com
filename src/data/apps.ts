@@ -12,7 +12,7 @@ export interface AppEntry {
 export const apps: AppEntry[] = [
   {
     slug: 'timefold',
-    name: 'Timefold',
+    name: 'Timefold - iOS',
     tagline: 'On This Day',
     description:
       'Privacy-first iOS app that surfaces photos taken on this date in past years from your Apple Photos library. No accounts. No analytics. Everything runs on-device.',
@@ -68,8 +68,8 @@ export const apps: AppEntry[] = [
   },
   {
     slug: 'timefold-android',
-    name: 'Timefold for Android',
-    tagline: 'On This Day · Android',
+    name: 'Timefold - Android',
+    tagline: 'On This Day',
     description:
       "Android port of Timefold built with Kotlin + Jetpack Compose. Same privacy promise, same on-device-only design — surfaces photos and videos taken on this date in past years from your device's MediaStore. Includes a Glance home-screen widget and optional local daily reminders.",
     icon: '/timefold-android-icon.png',

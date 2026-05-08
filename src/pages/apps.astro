@@ -28,14 +28,11 @@ import { apps } from '../data/apps';
                 class="w-16 h-16 rounded-xl border border-rule flex-shrink-0"
               />
               <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2 flex-wrap">
-                  <p class="text-dim text-xs tracking-widest uppercase">{app.slug.toUpperCase()}</p>
-                  {app.status && (
-                    <span class="text-xs tracking-widest uppercase border border-dim text-dim px-2 py-0.5">
-                      {app.status}
-                    </span>
-                  )}
-                </div>
+                {app.status && (
+                  <span class="inline-block text-xs tracking-widest uppercase border border-dim text-dim px-2 py-0.5 mb-2">
+                    {app.status}
+                  </span>
+                )}
                 <h2 class="text-fg text-lg font-bold">{app.name}</h2>
                 <p class="text-dim text-sm">{app.tagline}</p>
               </div>
