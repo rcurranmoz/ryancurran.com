@@ -228,6 +228,7 @@ export const apps: AppEntry[] = [
       'iOS app that turns a sentence about how you feel into an Apple Music playlist. Powered by Claude via a Cloudflare Worker proxy. No accounts, no tracking.',
     icon: '/moodring-icon.png',
     links: [
+      { label: 'App Store', href: 'https://apps.apple.com/us/app/moodring-play-what-you-feel/id6758353200' },
       { label: 'GitHub', href: 'https://github.com/rcurranmoz/MoodRing' },
     ],
     privacy: {
