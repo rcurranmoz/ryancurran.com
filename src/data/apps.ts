@@ -69,7 +69,7 @@ export const apps: AppEntry[] = [
   {
     slug: 'timefold-android',
     name: 'Timefold for Android',
-    tagline: 'On This Day · Android port',
+    tagline: 'On This Day · Android',
     description:
       "Android port of Timefold built with Kotlin + Jetpack Compose. Same privacy promise, same on-device-only design — surfaces photos and videos taken on this date in past years from your device's MediaStore. Includes a Glance home-screen widget and optional local daily reminders.",
     icon: '/timefold-android-icon.png',
