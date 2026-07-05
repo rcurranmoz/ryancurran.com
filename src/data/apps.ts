@@ -220,6 +220,53 @@ export const apps: AppEntry[] = [
     },
   },
   {
+    slug: 'deskpop',
+    name: 'Deskpop',
+    tagline: 'Retro Radio',
+    platform: 'Apple TV',
+    description:
+      'A nostalgic Apple Music radio experience for Apple TV, inspired by poolsuite.net — a vintage Macintosh desktop under a CRT shader, tuned to hand-curated channels, your favorite songs, and your personalized station. No accounts, no tracking, no servers.',
+    icon: '/deskpop-icon.png',
+    status: 'BETA',
+    links: [],
+    privacy: {
+      updated: 'July 5, 2026',
+      html: `
+<p>Deskpop is a native Apple TV radio app built on Apple Music. It has no accounts, no analytics, and no servers of its own — everything the app does happens directly between your Apple TV and Apple.</p>
+
+<h3>Information We Do Not Collect</h3>
+<ul>
+  <li>No user accounts are created</li>
+  <li>No analytics, telemetry, or crash-reporting frameworks are used</li>
+  <li>No advertising or marketing SDKs are included</li>
+  <li>No data is transmitted to servers operated by the developer, because there are none</li>
+</ul>
+
+<h3>Apple Music Access</h3>
+<p>With your permission, Deskpop uses Apple's MusicKit framework to:</p>
+<ul>
+  <li>Play full tracks through your Apple Music subscription</li>
+  <li>Search the Apple Music catalog to resolve the songs in Deskpop's built-in channels</li>
+  <li>Read your "Favorite Songs" playlist so the FAVORITES channel can play it</li>
+  <li>Fetch your personalized Apple Music station for the MY STATION channel</li>
+</ul>
+<p>All of these requests go directly from your device to Apple over Apple's secure APIs. Deskpop never sees, stores, or transmits your listening history, library contents, or account information. Apple Music itself is governed by Apple's privacy policy — see <a href="https://www.apple.com/legal/privacy" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a>.</p>
+
+<h3>Data Storage</h3>
+<p>Deskpop stores nothing about you. Channel definitions ship inside the app, and playback state lives in Apple's system music player. There are no user databases and no cloud storage.</p>
+
+<h3>Children's Privacy</h3>
+<p>Deskpop does not knowingly collect data from children under 13. Since no data is collected, stored, or transmitted by the app, there is no personal information to manage or disclose.</p>
+
+<h3>Changes to This Policy</h3>
+<p>If Deskpop's functionality changes in a way that affects privacy — for example, fetching channel lists from a server in a future update — this policy will be updated accordingly.</p>
+
+<h3>Contact</h3>
+<p>If you have questions about this privacy policy or Deskpop, <a href="mailto:ryanpcurran@icloud.com">contact me</a>.</p>
+      `.trim(),
+    },
+  },
+  {
     slug: 'moodring',
     name: 'MoodRing',
     tagline: 'Play What You Feel',
