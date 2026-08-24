@@ -1,6 +1,6 @@
 # ryancurran.com
 
-Personal site — landing + apps page for Timefold (iOS + Android), Crumb, BuildWatch, and MoodRing.
+Personal site — landing + apps page for BuildWatch, Crumb, and Latent.
 
 ## Stack
 
@@ -32,7 +32,7 @@ git push origin some-change
 
 ## Adding / editing an app
 
-All three apps live in `src/data/apps.ts` — name, tagline, description, icon path, links, and the full privacy policy as HTML. Edit there and the apps page picks it up at build.
+All apps live in `src/data/apps.ts` — name, tagline, description, icon path, links, and the full privacy policy as HTML. Edit there and the apps page picks it up at build.
 
 Icons live in `/public` (1024×1024 PNGs from each app's Xcode asset catalog, plus Crumb's source PNG).
 
