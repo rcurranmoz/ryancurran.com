@@ -1,6 +1,6 @@
 # ryancurran.com
 
-Personal site — landing + apps page for Timefold, Crumb, and BuildWatch.
+Personal site — landing + apps page for BuildWatch, Crumb, and Timefold.
 
 ## Stack
 
