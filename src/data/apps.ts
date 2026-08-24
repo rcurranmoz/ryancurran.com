@@ -20,6 +20,7 @@ export const apps: AppEntry[] = [
       'Native iOS app for Mozilla engineers — sheriffs, on-call, and devs — to monitor Firefox CI build status without opening a laptop. Live push lists, per-platform results, retrigger actions, and grouped failure summaries pulled from TreeHerder, TreeStatus, Taskcluster, and Bugzilla.',
     icon: '/buildwatch-icon.png',
     links: [
+      { label: 'App Store', href: 'https://apps.apple.com/app/id6759932755' },
       { label: 'GitHub', href: 'https://github.com/mozilla-platform-ops/BuildWatch' },
     ],
     privacy: {
