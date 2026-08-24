@@ -110,24 +110,24 @@ export const apps: AppEntry[] = [
     },
   },
   {
-    slug: 'timefold',
-    name: 'Timefold',
+    slug: 'latent',
+    name: 'Latent',
     tagline: 'On This Day',
     platform: 'iOS',
     description:
-      'Privacy-first iOS app that surfaces photos taken on this date in past years from your Apple Photos library. No accounts. No analytics. Everything runs on-device.',
-    icon: '/timefold-icon.png',
+      'Privacy-first iOS app that surfaces photos taken on this date in past years from your Apple Photos library, dealt out each morning by a small companion. No accounts. No analytics. Everything runs on-device. Formerly Timefold — renamed in v2.0.',
+    icon: '/latent-icon.png',
     links: [
-      { label: 'App Store', href: 'https://apps.apple.com/us/app/timefold-on-this-day/id6758055406' },
+      { label: 'App Store', href: 'https://apps.apple.com/app/id6758055406' },
       { label: 'GitHub', href: 'https://github.com/rcurranmoz/Timefold' },
     ],
     privacy: {
-      updated: 'January 2026',
+      updated: 'August 2026',
       html: `
-<p>Timefold is designed with privacy as a core principle. The app does not require accounts, does not use analytics or advertising, and does not send your data to external servers.</p>
+<p>Latent is designed with privacy as a core principle. The app does not require accounts, does not use analytics or advertising, and does not send your data to external servers.</p>
 
 <h3>Information We Do Not Collect</h3>
-<p>Timefold does not collect, store, transmit, or sell any personal data. Specifically:</p>
+<p>Latent does not collect, store, transmit, or sell any personal data. Specifically:</p>
 <ul>
   <li>No user accounts are created</li>
   <li>No analytics or tracking frameworks are used</li>
@@ -136,13 +136,13 @@ export const apps: AppEntry[] = [
 </ul>
 
 <h3>Photos Access</h3>
-<p>Timefold accesses your Apple Photos library locally on your device using Apple's Photos framework.</p>
+<p>Latent accesses your Apple Photos library locally on your device using Apple's Photos framework.</p>
 <ul>
   <li>Photos are processed entirely on-device</li>
   <li>Photos are never uploaded, synced, or backed up to any servers operated by the developer</li>
   <li>Any sharing actions are initiated explicitly by you using Apple's system share sheet</li>
 </ul>
-<p>Timefold works only with Apple Photos at this time. No third-party photo services (such as Google Photos, Facebook, or cloud storage providers) are accessed.</p>
+<p>Latent works only with Apple Photos at this time. No third-party photo services (such as Google Photos, Facebook, or cloud storage providers) are accessed.</p>
 
 <h3>Optional Actions</h3>
 <p>If you choose to:</p>
@@ -153,16 +153,16 @@ export const apps: AppEntry[] = [
 <p>These actions are always user-initiated.</p>
 
 <h3>Data Storage</h3>
-<p>Timefold does not maintain user databases or cloud storage. Any app preferences are stored locally on your device using standard iOS storage mechanisms.</p>
+<p>Latent does not maintain user databases or cloud storage. Any app preferences are stored locally on your device using standard iOS storage mechanisms.</p>
 
 <h3>Children's Privacy</h3>
-<p>Timefold does not knowingly collect any data from children. Since no data is collected, stored, or transmitted, there is no personal information to manage or disclose.</p>
+<p>Latent does not knowingly collect any data from children. Since no data is collected, stored, or transmitted, there is no personal information to manage or disclose.</p>
 
 <h3>Changes to This Policy</h3>
-<p>If Timefold's functionality changes in a way that affects privacy, this policy will be updated accordingly.</p>
+<p>If Latent's functionality changes in a way that affects privacy, this policy will be updated accordingly.</p>
 
 <h3>Contact</h3>
-<p>If you have questions about this privacy policy or Timefold, <a href="mailto:ryanpcurran@icloud.com">contact me</a>.</p>
+<p>If you have questions about this privacy policy or Latent, <a href="mailto:ryanpcurran@icloud.com">contact me</a>.</p>
       `.trim(),
     },
   },
